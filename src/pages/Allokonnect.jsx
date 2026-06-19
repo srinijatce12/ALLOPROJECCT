@@ -182,7 +182,7 @@ export default function Allokonnect() {
   ctaSecondary="Learn More"
   themeName="allokonnect"
   appPreview={dashboardPreview}
-  downloadLink="https://play.google.com/store/apps/details?id=com.savemom.alloconnect&hl=en-US"
+  googlePlayUrl="https://play.google.com/store/apps/details?id=com.savemom.alloconnect&hl=en-US"
 />
 
 {/* Video Section */}
