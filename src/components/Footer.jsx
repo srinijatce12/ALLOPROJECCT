@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Heart, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -25,6 +25,7 @@ const GithubIcon = () => (
 );
 
 export default function Footer({ brand, description, sisterProduct, sisterProductUrl }) {
+  const [modalType, setModalType] = useState(null);
   return (
     <footer className="footer">
       <div className="container footer-container">
@@ -56,14 +57,33 @@ export default function Footer({ brand, description, sisterProduct, sisterProduc
 
         {/* Links Column 2: Legal */}
         <div className="footer-links-column">
-          <h4 className="footer-heading">Legal</h4>
-          <ul className="footer-links-list">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Medical Disclaimer</a></li>
-            <li><a href="#">Security Info</a></li>
-          </ul>
-        </div>
+  <h4 className="footer-heading">Legal</h4>
+  <ul className="footer-links-list">
+    <li>
+      <button className="footer-btn" onClick={() => setModalType('privacy')}>
+        Privacy Policy
+      </button>
+    </li>
+
+    <li>
+      <button className="footer-btn" onClick={() => setModalType('terms')}>
+        Terms of Service
+      </button>
+    </li>
+
+    <li>
+      <button className="footer-btn" onClick={() => setModalType('medical')}>
+        Medical Disclaimer
+      </button>
+    </li>
+
+    <li>
+      <button className="footer-btn" onClick={() => setModalType('security')}>
+        Security Info
+      </button>
+    </li>
+  </ul>
+</div>
 
         {/* Links Column 3: Sister Products */}
         <div className="footer-links-column">
@@ -101,7 +121,64 @@ export default function Footer({ brand, description, sisterProduct, sisterProduc
           </p>
         </div>
       </div>
+{modalType && (
+  <div className="modal-overlay" onClick={() => setModalType(null)}>
+    <div
+      className="modal-content"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        className="close-btn"
+        onClick={() => setModalType(null)}
+      >
+        ×
+      </button>
 
+      {modalType === 'privacy' && (
+        <>
+          <h2>Privacy Policy</h2>
+          <p>
+            We respect your privacy and protect your personal information.
+            Data collected through Allobaby and Allokonnect is used only
+            to provide healthcare-related services.
+          </p>
+        </>
+      )}
+
+      {modalType === 'terms' && (
+        <>
+          <h2>Terms of Service</h2>
+          <p>
+            By using this application, users agree to use the platform
+            responsibly and follow all applicable laws and regulations.
+          </p>
+        </>
+      )}
+
+      {modalType === 'medical' && (
+        <>
+          <h2>Medical Disclaimer</h2>
+          <p>
+            This application provides informational content only and does
+            not replace professional medical advice, diagnosis, or treatment.
+            Always consult qualified healthcare professionals.
+          </p>
+        </>
+      )}
+
+      {modalType === 'security' && (
+        <>
+          <h2>Security Information</h2>
+          <p>
+            User information is protected using secure authentication,
+            encrypted communication channels, and industry-standard
+            security practices.
+          </p>
+        </>
+      )}
+    </div>
+  </div>
+)}
       <style>{`
         .footer {
           background-color: #0f172a;
@@ -228,7 +305,60 @@ export default function Footer({ brand, description, sisterProduct, sisterProduc
           justify-content: space-between;
           gap: 12px;
         }
+        .footer-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  padding: 0;
+}
 
+.footer-btn:hover {
+  color: #ffffff;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.modal-content {
+  background: white;
+  color: #0f172a;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  line-height: 1.8;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
         @media (min-width: 768px) {
           .footer-bottom-container {
             flex-direction: row;
