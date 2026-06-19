@@ -182,6 +182,7 @@ export default function Allokonnect() {
   ctaSecondary="Learn More"
   themeName="allokonnect"
   appPreview={dashboardPreview}
+  downloadLink="https://play.google.com/store/apps/details?id=com.savemom.alloconnect&hl=en-US"
 />
 
 {/* Video Section */}
@@ -395,7 +396,12 @@ export default function Allokonnect() {
 
       <FAQ title="Allokonnect FAQ Support" tagline="FAQ" description="Get instant answers about family code limits, encryption keys, and device syncing." faqs={faqsList} />
 
-      <Download heading="Secure Your Family Care Circle" subtitle="Download Allokonnect on Android and keep your loved ones synced on health updates." brandName="Allokonnect" />
+      <Download
+  heading="Secure Your Family Care Circle"
+  subtitle="Download Allokonnect on Android and keep your loved ones synced on health updates."
+  brandName="Allokonnect"
+  playStoreUrl="https://play.google.com/store/apps/details?id=com.savemom.alloconnect&hl=en-US"
+/>
 
       <Footer brand="Allokonnect" description="Strengthening family care bonds with smart, private dashboards, medication planners, and collaborative vitals monitoring." sisterProduct="Allobaby" sisterProductUrl="/allobaby" />
     </div>
