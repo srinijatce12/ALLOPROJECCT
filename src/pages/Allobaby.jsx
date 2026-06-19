@@ -106,17 +106,16 @@ export default function Allobaby() {
       
       <Navbar brand="Allobaby" otherProduct="Allokonnect" otherProductUrl="/allokonnect" menuItems={menuItems} />
       
-      <Hero 
-        title="Smart Care For Every Pregnancy Journey"
-        tagline="Allobaby"
-        description="Supporting mothers with smart pregnancy tracking, baby growth updates, vital reminders, and personalized clinical digital care guidelines."
-        ctaPrimary="Download App"
-        ctaSecondary="Explore Features"
-        themeName="allobaby"
-        appPreview={dashboardPreview}
-        googlePlayUrl="https://play.google.com/store/apps/details?id=com.savemom.allobaby&hl=en-US"
-      />
-
+      <Hero
+  title="Smart Care For Every Pregnancy Journey"
+  tagline="Allobaby"
+  description="Supporting mothers with smart pregnancy tracking, baby growth updates, vital reminders, and personalized clinical digital care guidelines."
+  ctaPrimary="Download App"
+  ctaSecondary="Explore Features"
+  themeName="allobaby"
+  appPreview={dashboardPreview}
+  googlePlayUrl="https://play.google.com/store/apps/details?id=com.savemom.allobaby&hl=en-US"
+/>
       {/* Video Walkthrough */}
       <section className="video-section" style={{ padding: '80px 0', background: '#fff', textAlign: 'center' }}>
         <div className="container">
@@ -309,7 +308,7 @@ export default function Allobaby() {
   heading="Start Your Healthy Pregnancy Journey"
   subtitle="Download Allobaby on Android and start tracking baby growth with complete peace of mind."
   brandName="Allobaby"
-  googlePlayUrl="https://play.google.com/store/apps/details?id=com.savemom.allobaby&hl=en-US"
+  playStoreUrl="https://play.google.com/store/apps/details?id=com.savemom.allobaby&hl=en-US"
 />
 
 <Footer
