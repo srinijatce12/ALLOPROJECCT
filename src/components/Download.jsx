@@ -9,7 +9,8 @@ import {
 export default function Download({
   heading,
   subtitle,
-  brandName
+  brandName,
+  playStoreUrl
 }) {
   const [downloadState, setDownloadState] = useState('idle');
   const [progress, setProgress] = useState(0);
@@ -35,8 +36,7 @@ export default function Download({
           setDownloadState('complete');
 
           setTimeout(() => {
-            window.location.href =
-              'https://play.google.com/store/apps/details?id=com.savemom.allobaby&hl=en-US';
+            window.location.href = playStoreUrl;
           }, 2000);
         }, 300);
       }
